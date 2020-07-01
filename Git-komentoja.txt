@@ -1,0 +1,31 @@
+git add .
+git status
+git commit -m "viesti"
+
+
+liittäminen ulkoiseen repoon (tässä github)
+git remote add origin https://github.com/maunomato/lampotilat-python.git
+
+"uppiminen ulkoiseen"
+git push -u origin master
+
+uusi branch (alla oleva luo ja tekee checkoutin ns. short-hand (-b switch))
+ks. https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+git checkout -b iss53
+pidempi muoto samalle:
+git branch iss53
+git checkout iss53
+
+yhdistä oksa masteriin
+git checkout master
+git merge iss53
+
+poista haara ettei ala liiaksi rönsyilemään
+git branch -d iss53
+
+
+Ennen stagea (add) voidaan palauttaa vanhaan tiedosto(t)
+git restore tiedosto.txt
+
+..jos kerkesi stagelle, sama, mutta --staged switchillä
+git restore --staged tiedosto.txt
