@@ -37,3 +37,6 @@ git commit amend -m "korjattu kommit"
 
 siirrä HEAD tiettyyn commitiin
 git reset --hard COMMITKOODI
+
+palautat vanhan version tiedostosta
+git restore --source=COMMITKOODI tiedosto.txt
