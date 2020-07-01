@@ -32,6 +32,7 @@ git restore tiedosto.txt
 git restore --staged tiedosto.txt
 
 Pieleen mennyt commit voidaan korjata amend komennolla, tekee uuden kommitin edellisen pohjalta
+HUOM! amendia ei tehdä muiden koodiin, se on paikallinen...
 git commit amend -m "korjattu kommit"
 
 siirrä HEAD tiettyyn commitiin
