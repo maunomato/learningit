@@ -1,5 +1,6 @@
 git add .
 git status
+git log
 git commit -m "viesti"
 
 
@@ -29,3 +30,9 @@ git restore tiedosto.txt
 
 ..jos kerkesi stagelle, sama, mutta --staged switchillä
 git restore --staged tiedosto.txt
+
+Pieleen mennyt commit voidaan korjata amend komennolla, tekee uuden kommitin edellisen pohjalta
+git commit amend -m "korjattu kommit"
+
+siirrä HEAD tiettyyn commitiin
+git reset --hard COMMITKOODI
