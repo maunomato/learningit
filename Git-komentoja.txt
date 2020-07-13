@@ -1,42 +1,48 @@
+# GIT-komento-opas 
+
+# lisää kansion tiedostot stagelle
 git add .
+# status näyttää mm. stageing-alueen
 git status
+
+#log näyttää haaran commit historian
 git log
+
+# commitin tekeminen 
 git commit -m "viesti"
 
+# näyttää haarautumat ja missä haarassa ollaan
+git branch 
 
-liittäminen ulkoiseen repoon (tässä github)
+# uuden haaran luominen
+git switch -c "uusibranch"
+
+# haarojen välillä vaihtaminen esim. takaisin masteriin
+git switch master
+
+# liittäminen ulkoiseen repoon (tässä github)
 git remote add origin https://github.com/maunomato/lampotilat-python.git
 
-"uppiminen ulkoiseen"
+# "uppiminen ulkoiseen"
 git push -u origin master
 
-uusi branch (alla oleva luo ja tekee checkoutin ns. short-hand (-b switch))
-ks. https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
-git checkout -b iss53
-pidempi muoto samalle:
-git branch iss53
-git checkout iss53
-
-yhdistä oksa masteriin
-git checkout master
-git merge iss53
-
-poista haara ettei ala liiaksi rönsyilemään
+# poista haara ettei ala liiaksi rönsyilemään - pitää tehdä toisesta haarasta käsin
+# eli käytössä olevaa haaraa ei voi poistaa.
 git branch -d iss53
 
-
-Ennen stagea (add) voidaan palauttaa vanhaan tiedosto(t)
+# Ennen stagea (add) voidaan palauttaa vanhaan tiedosto(t)
 git restore tiedosto.txt
 
-..jos kerkesi stagelle, sama, mutta --staged switchillä
+# ..jos muutos kerkesi stagelle, sama kuin yllä, mutta --staged switchillä
 git restore --staged tiedosto.txt
 
-Pieleen mennyt commit voidaan korjata amend komennolla, tekee uuden kommitin edellisen pohjalta
-HUOM! amendia ei tehdä muiden koodiin, se on paikallinen...
-git commit amend -m "korjattu kommit"
+# Pieleen mennyt commit voidaan korjata amend komennolla, tekee uuden kommitin edellisen pohjalta
+# HUOM! amendia ei tehdä muiden koodiin, se on paikallinen...
+git commit amend -m "korjattu commit"
 
-siirrä HEAD tiettyyn commitiin
-git reset --hard COMMITKOODI
+# siirrä HEAD tiettyyn commitiin
+git reset --hard COMMITID
 
-palautat vanhan version tiedostosta
-git restore --source=COMMITKOODI tiedosto.txt
+# palautat vanhan version tietystä tiedostosta ja tietystä commitista
+git restore --source=COMMITID tiedosto.txt
+
