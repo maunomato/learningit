@@ -1,11 +1,13 @@
-# GIT-komento-opas 
+# GIT-komento-opas (erityisesti itselleni)
 
-# lisää kansion tiedostot stagelle
+# lisää kansion kaikki (muuttuneet) tiedostot stagelle
+# pisteen voi korvata tiedoston tai useamman nimellä
 git add .
+
 # status näyttää mm. stageing-alueen
 git status
 
-#log näyttää haaran commit historian
+# log näyttää haaran commit historian
 git log
 
 # commitin tekeminen 
@@ -20,6 +22,10 @@ git switch -c "uusibranch"
 # haarojen välillä vaihtaminen esim. takaisin masteriin
 git switch master
 
+# branchin yhdistäminen toiseen, --squash "litistää" liitettävän haaran commitit yhdeksi
+# kun ne liitetään toiseen haaraan
+git merge (--squash) "uusibranch"
+
 # liittäminen ulkoiseen repoon (tässä github)
 git remote add origin https://github.com/maunomato/lampotilat-python.git
 
@@ -28,7 +34,7 @@ git push -u origin master
 
 # poista haara ettei ala liiaksi rönsyilemään - pitää tehdä toisesta haarasta käsin
 # eli käytössä olevaa haaraa ei voi poistaa.
-git branch -d iss53
+git branch -d "uusibranch"
 
 # Ennen stagea (add) voidaan palauttaa vanhaan tiedosto(t)
 git restore tiedosto.txt
@@ -40,9 +46,8 @@ git restore --staged tiedosto.txt
 # HUOM! amendia ei tehdä muiden koodiin, se on paikallinen...
 git commit amend -m "korjattu commit"
 
-# siirrä HEAD tiettyyn commitiin
-git reset --hard COMMITID
+# siirrä HEAD tiettyyn commitiin (HEADID = commitin tunnus)
+git reset --hard HEADID
 
 # palautat vanhan version tietystä tiedostosta ja tietystä commitista
 git restore --source=COMMITID tiedosto.txt
-
