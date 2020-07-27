@@ -4,33 +4,36 @@
 # pisteen voi korvata tiedoston tai useamman nimellä
 git add .
 
-# status näyttää mm. stageing-alueen
+# komento status näyttää mm. stageing-alueen 
 git status
 
-# log näyttää haaran commit historian
+# log näyttää haaran commit-historian (head-kursori näyttää käytössä olevan commitin)
 git log
 
-# commitin tekeminen 
+# commitin tekeminen -m switchin jälkeen muutoksia lyhesti kuvaava viesti
 git commit -m "viesti"
 
-# näyttää haarautumat ja missä haarassa ollaan
+# näyttää haarautumat ja missä haarassa ollaan 
 git branch 
 
 # uuden haaran luominen
 git switch -c "uusibranch"
 
 # haarojen välillä vaihtaminen esim. takaisin masteriin
-git switch master
+git switch BRANCHIN-NIMI
 
 # branchin yhdistäminen toiseen, --squash "litistää" liitettävän haaran commitit yhdeksi
 # kun ne liitetään toiseen haaraan
-git merge (--squash) "uusibranch"
+git merge --squash "uusibranch"
 
 # liittäminen ulkoiseen repoon (tässä github)
 git remote add origin https://github.com/maunomato/lampotilat-python.git
 
-# "uppiminen ulkoiseen"
+# "uppiminen ulkoiseen" esim. näin master-branch githubiin
 git push -u origin master
+
+# toisen branchin lähettäminen githubiin:
+git push -u origin uusibranch
 
 # poista haara ettei ala liiaksi rönsyilemään - pitää tehdä toisesta haarasta käsin
 # eli käytössä olevaa haaraa ei voi poistaa.
